@@ -8,7 +8,8 @@
 - [x] Set up database
 - [x] Attach database to UI
 - [x] Add authentication
-- [ ] Add image upload
+- [x] Add image upload
+- [ ] "taint" (server-only)
 - [ ] Error management
 - [ ] Routing/image page
 - [ ] Delete button
