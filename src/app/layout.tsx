@@ -18,12 +18,12 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
-
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export default function RootLayout({
-  children, modal
-}: Readonly<{ children: React.ReactNode, modal: React.ReactNode }>) {
+  children,
+  modal,
+}: Readonly<{ children: React.ReactNode; modal: React.ReactNode }>) {
   return (
     <ClerkProvider>
       <html lang="en" className={cn("font-sans", inter.variable)}>
@@ -38,12 +38,12 @@ export default function RootLayout({
         />
         <body className={`font-sans ${inter.variable} dark`}>
           <div className="grid h-screen grid-rows-[auto,1fr]">
-            <TopNav/>
+            <TopNav />
             <main className="overflow-y-scroll">{children}</main>
             {modal}
           </div>
-          <div id="modal-root"/>
-          <Toaster/>
+          <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

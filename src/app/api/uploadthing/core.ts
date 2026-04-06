@@ -6,8 +6,6 @@ import { images } from "~/server/db/schema";
 
 const f = createUploadthing();
 
-
-
 // FileRouter for your app, can contain multiple FileRoutes
 export const ourFileRouter = {
   // Define as many FileRoutes as you like, each with a unique routeSlug
@@ -39,7 +37,7 @@ export const ourFileRouter = {
       await db.insert(images).values({
         name: file.name,
         url: file.url,
-        userId: metadata.userId
+        userId: metadata.userId,
       });
 
       // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback

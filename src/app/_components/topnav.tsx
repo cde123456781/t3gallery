@@ -1,6 +1,5 @@
-import { Show, SignInButton, UserButton } from "@clerk/nextjs"
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 import { SimpleUploadButton } from "./simple-upload-button";
-
 
 export function TopNav() {
   return (
@@ -8,11 +7,11 @@ export function TopNav() {
       <div>Gallery</div>
       <div className="flex flex-row items-center gap-4">
         <Show when="signed-out">
-            <SignInButton/>
+          <SignInButton />
         </Show>
         <Show when="signed-in">
-            <SimpleUploadButton/>
-            <UserButton/>
+          <SimpleUploadButton />
+          <UserButton />
         </Show>
       </div>
     </nav>
