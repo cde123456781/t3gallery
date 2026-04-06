@@ -9,6 +9,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { TopNav } from "./_components/topnav";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { cn } from "~/lib/utils";
 
 export const metadata: Metadata = {
   title: "T3 Gallery",
@@ -16,10 +17,7 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 
 export default function RootLayout({
@@ -27,7 +25,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode, modal: React.ReactNode }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className={cn("font-sans", inter.variable)}>
         <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
@@ -41,8 +39,8 @@ export default function RootLayout({
           <div className="grid h-screen grid-rows-[auto,1fr]">
             <TopNav/>
             <main className="overflow-y-scroll">{children}</main>
+            {modal}
           </div>
-          {modal}
           <div id="modal-root"/>
         </body>
       </html>
